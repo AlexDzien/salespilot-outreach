@@ -2,7 +2,7 @@
 
 Sales workflow for opportunity research, multilingual drafts, delivery evidence, and a CRM board.
 
-**Zakres publiczny:** Studium przypadku, moduł językowy i testy.
+**Zakres publiczny:** studium przypadku, rozpoznawanie języka i odczyt nowych odpowiedzi MIME z testami.
 
 ## Problem
 
@@ -21,4 +21,6 @@ FastAPI, React, TypeScript, SQLAlchemy, Alembic, SQLite, APScheduler, REST/SSE, 
 
 ## Co można sprawdzić
 
-`salespilot/language.py` to wydzielony moduł sprawdzania języka używany przy tworzeniu szkiców. **Python 3.10+:** `python -m pip install -r requirements.txt`, następnie `python -m unittest discover -s tests`.
+`salespilot/language.py` to wydzielony moduł sprawdzania języka używany przy tworzeniu szkiców. `salespilot/reply_text.py` dekoduje nagłówki i treść MIME, pomija załączniki i oddziela nową odpowiedź od zacytowanej historii. To pozwala uniknąć klasyfikowania starego przycisku wypisu lub pytania handlowca jako nowej odpowiedzi.
+
+**Python 3.10+:** `python -m pip install -r requirements.txt`, następnie `python -m unittest discover -s tests`.
